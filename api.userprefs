@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{168E6FA7-869A-4822-97DA-31146D108F86}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data/DbInitializer.cs">
+    <Files>
+      <File FileName="Data/DbInitializer.cs" Line="59" Column="16" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/ronaldmanzano/Projects/phrost/source/api/Program.cs" relfile="Program.cs" line="1" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.WebApi PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
