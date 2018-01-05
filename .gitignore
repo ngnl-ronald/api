@@ -1,0 +1,7 @@
+*~
+.DS_Store
+bin
+bin/Debug
+obj
+WebApi.csproj.user
+api.userprefs

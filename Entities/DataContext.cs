@@ -36,7 +36,6 @@ namespace WebApi.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder){
             modelBuilder.Entity<Employee>().ToTable("employees");
-            modelBuilder.Entity<AuthUser>().ToTable("auth_users");
            
         }
     }
