@@ -4,50 +4,50 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApi.Entities
 {
-    public class Employee
+    public class employee
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id{ get; set; }
+        public int id{ get; set; }
 
         //[Required]
-        public string Code { get; set; }
+        public string code { get; set; }
 
         //[Required]
-        public string GivenName { get; set; }
+        public string given_name { get; set; }
 
         //[Required]
-        public string Surname { get; set; }
+        public string surname { get; set; }
 
-        public string OtherGivenName { get; set; }
+        public string other_given_name { get; set; }
 
-        public string Prefix { get; set; }
+        public string prefix { get; set; }
 
-        public string Suffix { get; set; }
+        public string suffix { get; set; }
 
-        public string TFN { get; set; }
+        public string tfn { get; set; }
 
         //[Phone]
-        public string MobileNumber { get; set; }
+        public string mobile_number { get; set; }
 
         //[EmailAddress]
-        public string EmailAddress { get; set; }
+        public string email_address { get; set; }
        
-        public DateTime DateOfBirth { get; set; }
+        public DateTime data_of_birth { get; set; }
 
-        public int Gender_Id { get; set; }
+        public int gender_id { get; set; }
 
-        public int WorkType_Id { get; set; }
+        public int work_type_id { get; set; }
 
-        public int EmployeeStatus_Id { get; set; }
-
-        //[Required]
-        public int CreatedBy_Id { get; set; }
+        public int employee_status_id { get; set; }
 
         //[Required]
-        public DateTime DateCreated { get; set; }
+        public int created_by_id { get; set; }
 
-        public int ModifiedBy_Id { get; set; }
+        //[Required]
+        public DateTime date_created { get; set; }
 
-        public DateTime DateModified { get; set; }
+        public int modified_by_id { get; set; }
+
+        public DateTime date_modified { get; set; }
     }
 }

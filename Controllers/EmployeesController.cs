@@ -21,44 +21,44 @@ namespace WebApi
         // GET: api/values
 
         [HttpGet]
-        public IEnumerable<Employee> Get()
+        public IEnumerable<employee> Get()
         {
-            return dbContext.Employees;
+            return dbContext.employees;
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public Employee Get(int id)
+        public employee Get(int id)
         {
-            return dbContext.Employees.Where(t => t.Id == id).FirstOrDefault();
+            return dbContext.employees.Where(t => t.id == id).FirstOrDefault();
         }
 
         // POST api/values
         [HttpPost]
-        public Employee Post([FromBody]Employee value)
+        public employee Post([FromBody]employee value)
         {
-            dbContext.Employees.Add(value);
+            dbContext.employees.Add(value);
             dbContext.SaveChanges();
             return value;
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public Employee Put(int id, [FromBody]Employee value)
+        public employee Put(int id, [FromBody]employee value)
         {
-            var entity = dbContext.Employees.Where(t => t.Id == id).FirstOrDefault();
-            entity.GivenName = value.GivenName;
-            entity.Surname = value.Surname;
+            var entity = dbContext.employees.Where(t => t.id == id).FirstOrDefault();
+            entity.given_name = value.given_name;
+            entity.surname = value.surname;
             dbContext.SaveChanges();
             return entity;
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public Employee Delete(int id)
+        public employee Delete(int id)
         {
-            var entity = dbContext.Employees.Where(t => t.Id == id).FirstOrDefault();
-            dbContext.Employees.Remove(entity);
+            var entity = dbContext.employees.Where(t => t.id == id).FirstOrDefault();
+            dbContext.employees.Remove(entity);
             dbContext.SaveChanges();
             return entity;
         }
