@@ -74,7 +74,7 @@ namespace WebApi.Data
                         username = "admin",
                         password_hash = passwordHash,
                         password_salt = passwordSalt,
-                        security_user_role_id = 1
+                        auth_user_role_id = 1
                     } // 1-admin
             };
 

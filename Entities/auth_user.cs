@@ -11,7 +11,7 @@ namespace WebApi.Entities
         public byte[] password_salt { get; set; }
         public int employee_id { get; set; }
         [Required]
-        public int security_user_role_id { get; set; }
-        public int security_user_level { get; set; }
+        public int auth_user_role_id { get; set; }
+        public int auth_user_level { get; set; }
     }
 }

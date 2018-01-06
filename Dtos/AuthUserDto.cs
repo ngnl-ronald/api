@@ -11,8 +11,8 @@ namespace WebApi.Dtos
 
         //[StringLength(100, ErrorMessage = "PASSWORD_MIN_LENGTH", MinimumLength = 6)]
         public string Password { get; set; }
-        public int SecurityUserRole_Id { get; set; }
-        public int SecurityUserGroup_Id { get; set; }
+        public int auth_user_role_id { get; set; }
+        public int auth_user_level { get; set; }
 
     }
 }
