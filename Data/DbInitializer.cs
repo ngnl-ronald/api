@@ -25,8 +25,10 @@ namespace WebApi.Data
 
         public static void Initialize(DataContext context)
         {
-            //AppDomain.CurrentDomain.BaseDirectory
+            context.Database.EnsureCreated();
 
+            //===EXECUTE ALL SQL FILES IN root/Schema TO DB
+            //===DEV ONLY
             var path = AppDomain.CurrentDomain.BaseDirectory;
             string schemaDir = Path.GetDirectoryName(path); //without file name
             schemaDir = Path.GetDirectoryName(schemaDir); // Temp folder
@@ -36,11 +38,14 @@ namespace WebApi.Data
 
             string[] directories = Directory.GetDirectories(schemaDir);
 
-            foreach(string s in directories){
+            foreach (string s in directories)
+            {
                 string[] files = Directory.GetFiles(s);
 
-                foreach(string a in files){
-                    if (a.Contains(".sql")){
+                foreach (string a in files)
+                {
+                    if (a.Contains(".sql"))
+                    {
                         string file = File.OpenText(a).ReadToEnd();
                         context.Database.ExecuteSqlCommand(file);
                     }
@@ -49,21 +54,7 @@ namespace WebApi.Data
 
             }
 
-            //string schema = File.OpenText(schemaFile).ReadToEnd();
-
-            //context.Database.ExecuteSqlCommand(schema);
-
-            //using (StreamReader sr = File.OpenText(schemaFile))
-            //{
-            //    Console.WriteLine(sr.ReadToEnd());
-            //    //string s = "";
-            //    //while ((s = sr.ReadLine()) != null)
-            //    //{
-            //    //    Console.WriteLine(s);
-            //    //}
-            //}
-            
-            context.Database.EnsureCreated();
+            //===END
 
             // Look for any students.
             if (context.auth_users.Any())
