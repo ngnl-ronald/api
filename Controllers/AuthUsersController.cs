@@ -49,7 +49,7 @@ namespace WebApi.Controllers
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]{
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                    new Claim(ClaimTypes.Name, user.id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -59,8 +59,8 @@ namespace WebApi.Controllers
 
             return Ok(new
             {
-                Id = user.Id,
-                Username = user.Username,
+                Id = user.id,
+                Username = user.username,
                 Token = tokenString
             });
         }
@@ -70,7 +70,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Register([FromBody]AuthUserDto userDto)
         {
             // map dto to entity
-            var user = _mapper.Map<AuthUser>(userDto);
+            var user = _mapper.Map<auth_user>(userDto);
 
             try
             {
@@ -106,8 +106,8 @@ namespace WebApi.Controllers
         public IActionResult Update(int id, [FromBody]AuthUserDto userDto)
         {
             // map dto to entity and set id
-            var user = _mapper.Map<AuthUser>(userDto);
-            user.Id = id;
+            var user = _mapper.Map<auth_user>(userDto);
+            user.id = id;
 
             try
             {

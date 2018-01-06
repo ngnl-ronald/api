@@ -15,7 +15,7 @@ namespace WebApi.Entities
         private string GetConnectionString()
         {
             const string server = "localhost";
-            const string databaseName = "dotnet_test";
+            const string databaseName = "ngnl_dev";
             const string userId = "sa";
             const string databasePassword = "masterkey";
             const string serverPort = "2000";
@@ -30,12 +30,13 @@ namespace WebApi.Entities
 
         }
 
-        public DbSet<Entities.Employee> Employees { get; set; }
-        public DbSet<Entities.AuthUser> AuthUsers { get; set; }
+        public DbSet<Entities.employee> employees { get; set; }
+        public DbSet<Entities.auth_user> auth_users { get; set; }
+        public DbSet<Entities.auth_user_role> auth_user_roles { get; set; }
         public DbSet<Entities.Lookup> Lookups { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder){
-            modelBuilder.Entity<Employee>().ToTable("employees");
+            modelBuilder.Entity<employee>().ToTable("employees");
            
         }
     }
