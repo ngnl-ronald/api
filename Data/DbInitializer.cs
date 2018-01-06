@@ -40,8 +40,11 @@ namespace WebApi.Data
                 string[] files = Directory.GetFiles(s);
 
                 foreach(string a in files){
-                    string file = File.OpenText(a).ReadToEnd();
-                    context.Database.ExecuteSqlCommand(file);
+                    if (a.Contains(".sql")){
+                        string file = File.OpenText(a).ReadToEnd();
+                        context.Database.ExecuteSqlCommand(file);
+                    }
+
                 }
 
             }
